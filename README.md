@@ -1,75 +1,77 @@
-# Loan Default using Deep Learning
+# Loan Default Prediction using Deep Learning
 
-Description
+## Description
 
-Create a model that predicts whether or not a loan will be default using the historical data.
+In this project, we build a deep learning model to predict whether or not a loan will default using historical data. The dataset includes loan information from 2007 to 2015 and contains various features that help determine whether a loan will be defaulted. This project is crucial for companies like Lending Club, where accurate prediction of loan defaults is key to minimizing risk.
 
- 
+The dataset is highly imbalanced and contains a large number of features, making it a challenging problem for deep learning models. We perform **exploratory data analysis (EDA)**, **feature engineering**, and **deep learning** techniques to predict loan defaults.
 
-Problem Statement:  
+## Table of Contents
 
-For companies like Lending Club correctly predicting whether or not a loan will be a default is very important. In this project, using the historical data from 2007 to 2015, you have to build a deep learning model to predict the chance of default for future loans. As you will see later this dataset is highly imbalanced and includes a lot of features that makes this problem more challenging.
+1. [Description](#description)
+2. [Technology Used](#technology-used)
+3. [Dependencies](#dependencies)
+4. [Project Insights](#project-insights)
 
-Domain: Finance
+## Technology Used
 
-Analysis to be done: Perform data preprocessing and build a deep learning prediction model. 
+- **Pandas**: For data manipulation and preprocessing.
+- **Numpy**: For numerical computations and data handling.
+- **Keras**: For building and training the deep learning model.
+- **TensorFlow**: Backend for deep learning computations.
+- **Matplotlib** and **Seaborn**: For visualizations and data analysis.
+- **Scikit-learn**: For additional machine learning utilities like scaling and splitting the data.
 
-Content: 
+## Dependencies
 
-Dataset columns and definition:
+- `pandas`
+- `numpy`
+- `keras`
+- `tensorflow`
+- `matplotlib`
+- `seaborn`
+- `scikit-learn`
 
- 
+## Project Insights
 
-credit.policy: 1 if the customer meets the credit underwriting criteria of LendingClub.com, and 0 otherwise.
+### Key Features in the Dataset:
 
-purpose: The purpose of the loan (takes values "credit_card", "debt_consolidation", "educational", "major_purchase", "small_business", and "all_other").
+- **credit.policy**: Indicator of whether the borrower meets the credit underwriting criteria.
+- **purpose**: The purpose of the loan (e.g., credit card, debt consolidation, etc.).
+- **int.rate**: The interest rate assigned to the loan.
+- **installment**: The monthly payment owed by the borrower.
+- **log.annual.inc**: The natural log of the borrower’s annual income.
+- **dti**: Debt-to-income ratio.
+- **fico**: Borrower’s FICO credit score.
+- **days.with.cr.line**: The number of days the borrower has had a credit line.
+- **revol.bal**: Borrower’s revolving balance (credit balance at month-end).
+- **revol.util**: Borrower’s revolving line utilization ratio.
+- **inq.last.6mths**: Number of inquiries by creditors in the past 6 months.
+- **delinq.2yrs**: Number of times the borrower was 30+ days past due on a payment in the past 2 years.
+- **pub.rec**: Number of derogatory public records (bankruptcies, tax liens, etc.).
 
-int.rate: The interest rate of the loan, as a proportion (a rate of 11% would be stored as 0.11). Borrowers judged by LendingClub.com to be more risky are assigned higher interest rates.
+### Steps Performed:
 
-installment: The monthly installments owed by the borrower if the loan is funded.
+1. **Exploratory Data Analysis (EDA)**: Performed EDA to understand the data, identify patterns, and detect outliers.
+2. **Feature Engineering**: Converted categorical variables into numerical ones and transformed data as necessary.
+3. **Correlation Analysis**: Removed highly correlated features to reduce redundancy and focus on the most relevant data.
+4. **Modeling**: Built a deep learning model using Keras and TensorFlow to predict loan defaults.
 
-log.annual.inc: The natural log of the self-reported annual income of the borrower.
+### Tasks and Techniques:
 
-dti: The debt-to-income ratio of the borrower (amount of debt divided by annual income).
+- **Feature Transformation**: Categorical data such as `purpose` is transformed into numerical format using encoding techniques.
+- **Exploratory Data Analysis**: Investigated trends, distributions, and relationships between features and loan default status.
+- **Additional Feature Engineering**: Applied techniques like feature scaling and dimensionality reduction to enhance model performance.
+- **Modeling**: After preprocessing and feature selection, we built and trained a deep learning model using Keras with TensorFlow backend.
 
-fico: The FICO credit score of the borrower.
+### Model Details:
 
-days.with.cr.line: The number of days the borrower has had a credit line.
+- **Model Type**: Deep learning using a feed-forward neural network.
+- **Activation Function**: Relu for hidden layers, sigmoid for the output layer to predict binary defaults (0: no default, 1: default).
+- **Loss Function**: Binary cross-entropy.
+- **Optimizer**: Adam optimizer for efficient training.
 
-revol.bal: The borrower's revolving balance (amount unpaid at the end of the credit card billing cycle).
+---
 
-revol.util: The borrower's revolving line utilization rate (the amount of the credit line used relative to total credit available).
+This **`README.md`** contains the essential project details, technology stack, and insights about the loan default prediction task. Let me know if any further modifications are needed!
 
-inq.last.6mths: The borrower's number of inquiries by creditors in the last 6 months.
-
-delinq.2yrs: The number of times the borrower had been 30+ days past due on a payment in the past 2 years.
-
-pub.rec: The borrower's number of derogatory public records (bankruptcy filings, tax liens, or judgments).
-
- 
-
-Steps to perform:
-
-Perform exploratory data analysis and feature engineering and then apply feature engineering. Follow up with a deep learning model to predict whether or not the loan will be default using the historical data.
-
- 
-
-Tasks:
-
-1.     Feature Transformation
-
-Transform categorical values into numerical values (discrete)
-
-2.     Exploratory data analysis of different factors of the dataset.
-
-3.     Additional Feature Engineering
-
-You will check the correlation between features and will drop those features which have a strong correlation
-
-This will help reduce the number of features and will leave you with the most relevant features
-
-4.     Modeling
-
-After applying EDA and feature engineering, you are now ready to build the predictive models
-
-In this part, you will create a deep learning model using Keras with Tensorflow backend
