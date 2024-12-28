@@ -71,7 +71,7 @@ The dataset is highly imbalanced and contains a large number of features, making
 - **Loss Function**: Binary cross-entropy.
 - **Optimizer**: Adam optimizer for efficient training.
 
----
 
-This **`README.md`** contains the essential project details, technology stack, and insights about the loan default prediction task. Let me know if any further modifications are needed!
+
+
 
